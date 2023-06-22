@@ -1,0 +1,17 @@
+for (int i = 2; i < 93; i++) {
+        printf("%d ", i);
+        clock_gettime(CLOCK_REALTIME, &t1);
+        (void) repeated_addition(i);
+        clock_gettime(CLOCK_REALTIME, &t2);
+        printf("%ld ", elapse(t1, t2));
+
+        clock_gettime(CLOCK_REALTIME, &t1);
+        (void) double_fib1(i);
+        clock_gettime(CLOCK_REALTIME, &t2);
+        printf("%ld ", elapse(t1, t2));
+
+        clock_gettime(CLOCK_REALTIME, &t1);
+        (void) double_fib2(i);
+        clock_gettime(CLOCK_REALTIME, &t2);
+        printf("%ld\n", elapse(t1, t2));
+    }
